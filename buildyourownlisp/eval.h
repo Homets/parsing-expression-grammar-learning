@@ -4,7 +4,7 @@
 #include <errno.h>
 
 enum { LVAL_NUM, LVAL_ERR };
-enum  { LERR_DIV_ZERO, LERR_BAD_OP, LERR_BAD_NUM};
+enum  { LERR_DIV_ZERO, LERR_BAD_OP, LERR_BAD_NUM, LERR_MOD_ZERO};
 
 typedef struct {
   int type;

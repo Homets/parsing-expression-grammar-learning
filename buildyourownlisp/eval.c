@@ -7,6 +7,9 @@ lval eval_op(lval x, char* op, lval y){
   if (strcmp(op, "/") == 0){
     return y.num == 0 ? lval_err(LERR_DIV_ZERO) : lval_num(x.num / y.num);
   }
+  if (strcmp(op, "%") == 0){
+    return y.num == 0 ? lval_err(LERR_MOD_ZERO) : lval_num(x.num % y.num);
+  }
   return lval_err(LERR_BAD_OP);
 }
 
@@ -62,6 +65,9 @@ void lval_print(lval v){
       }
       if (v.err == LERR_BAD_NUM){
         printf("Error: Invalid operand");
+      }
+      if (v.err == LERR_MOD_ZERO){
+      printf("Error: Modulo by Zero");
       }
       break;
   }
