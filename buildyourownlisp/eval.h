@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <errno.h>
 
-enum { LVAL_NUM, LVAL_ERR };
+enum { LVAL_NUM, LVAL_ERR, LVAL_SYM, LVAL_SEXPR};
 enum  { LERR_DIV_ZERO, LERR_BAD_OP, LERR_BAD_NUM, LERR_MOD_ZERO};
 
 typedef struct {
